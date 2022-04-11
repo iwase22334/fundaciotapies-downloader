@@ -5,10 +5,12 @@ import re
 import tqdm
 from bs4 import BeautifulSoup
 
+base_url = "https://fundaciotapies.org/en/the-collection/selected-works/?pg=%d"
 collection_urls = [
-        "https://fundaciotapies.org/en/the-collection/selected-works/?pg=%d" % i
-    for i in range(1,11)
+    base_url % i
+    for i in range(1, 11)
 ]
+
 
 def parse_collection_page(url):
     urls = []
@@ -33,7 +35,7 @@ def to_filepath(title):
     file_name = author + " - " + title + ".jpg"
     file_name = file_name.replace(" ", "_")
 
-    ## Remove bad path chars
+    # Remove bad path chars
     file_name = re.sub(r'[^\w\-_\. ]', '_', file_name)
     return file_name
 
