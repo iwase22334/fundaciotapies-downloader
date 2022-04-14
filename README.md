@@ -1,7 +1,7 @@
 # tapies-downloader 
 
 simple script for downloading paintings from following URL.
-https://fundaciotapies.org/en/the-collection/
+ - https://fundaciotapies.org/en/the-collection/
 
 ## Usage
 
